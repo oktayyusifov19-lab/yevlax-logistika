@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YEVLAX ONLAYN LOGİSTİKA VƏ KADR MƏRKƏZİ</title>
+  
+  <link rel="canonical" href="https://yevlax-regionalni-onlayn-elaqelendirici-logistika-pa1f4qoot.vercel.app/">
+
+  <link rel="icon" type="image/jpeg" href="logo_v3.jpeg?v=100">
+  <link rel="shortcut icon" type="image/jpeg" href="logo_v3.jpeg?v=100">
+  <link rel="apple-touch-icon" href="logo_v3.jpeg?v=100">
+  <link rel="apple-touch-icon-precomposed" href="logo_v3.jpeg?v=100">
+  <link rel="manifest" href='data:application/manifest+json,{"name":"YEVLAX LOGİSTİKA VƏ KADR MƏRKƏZİ","short_name":"YEVLAX MƏRKƏZ","start_url":".","display":"standalone","background_color":"#0b1329","theme_color":"#0b1329","icons":[{"src":"logo_v3.jpeg?v=100","sizes":"192x192","type":"image/jpeg","purpose":"any"},{"src":"logo_v3.jpeg?v=100","sizes":"512x512","type":"image/jpeg","purpose":"any"}]}'>
+
+  <style>
+    :root {
+      --bg-color: #0b1329;
+      --card-bg: #ffffff;
+      --text-color: #1e293b;
+      --accent-orange: #ff5722;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    header {
+      position: relative;
+      text-align: center;
+      background: #000;
+      width: 100%;
+      height: 30vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .banner-img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; }
+    .header-logo-container { position: absolute; top: 10px; left: 15px; z-index: 10; }
+    .header-logo { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #ff5722; box-shadow: 0 4px 10px rgba(0,0,0,0.6); object-fit: cover; background-color: #ffffff; }
+    .admin-status {
+      position: absolute; top: 12px; right: 15px; background: var(--accent-orange); color: #fff;
+      padding: 6px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5); z-index: 10; user-select: none;
+    }
+    nav {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      background: var(--bg-color); padding: 10px 8px;
+    }
+    .nav-row { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; width: 100%; }
+    .nav-btn {
+      background: #ffffff; color: #0f172a; border: none; padding: 7px 12px;
+      border-radius: 10px; font-weight: 700; font-size: 12px; cursor: pointer;
+      transition: all 0.2s ease-in-out; display: inline-flex; align-items: center; gap: 5px;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    }
+    .nav-btn.nav-esas { background: #334155; color: #fff; }
+    .nav-btn.nav-logistics { background: #1e3a8a; color: #fff; }
+    .nav-btn.nav-hr { background: #0d9488; color: #fff; }
+    .nav-btn.active { transform: scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.6); border: 2px solid #fff; }
+    .nav-btn:hover { transform: translateY(-2px); }
+    .container { max-width: 650px; margin: 0 auto 30px auto; padding: 0 12px; }
+    .tab-content {
+      display: none; background: #ffffff; color: #1e293b; padding: 18px;
+      border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .tab-content.active { display: block !important; }
+    .main-title { text-align: center; font-size: 18px; font-weight: 900; color: #0f172a; margin-top: 0; margin-bottom: 5px; }
+    .sub-title { text-align: center; color: #22c55e; font-weight: 800; font-size: 13px; margin-bottom: 15px; }
+    .action-stack { display: flex; flex-direction: column; gap: 12px; }
+    .btn-action {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 14px; border: none; border-radius: 8px; font-size: 14px;
+      font-weight: 800; color: #ffffff; cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15); text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .btn-whatsapp-bg { background: #22c55e; }
+    .btn-telegram-bg { background: #0284c7; }
+    .btn-apk-bg { background: #0f172a; }
+    .banner-card { background: #0f172a; color: #ffffff; padding: 14px; border-radius: 8px; text-align: center; margin-top: 5px; }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; font-weight: 600; font-size: 13px; color: #334155; margin-bottom: 4px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none;
+    }
+    .form-row { display: flex; gap: 10px; }
+    .form-row .form-group { flex: 1; }
+    .submit-btn { width: 100%; padding: 12px; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; color: #fff; cursor: pointer; margin-top: 5px; }
+    .btn-green-form { background: #22c55e; }
+    .btn-orange-form { background: #ea580c; }
+    .btn-driver-form { background: #0d9488; }
+    .btn-operator-form { background: #b45309; }
+    .card {
+      background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px;
+      padding: 12px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: relative; margin-bottom: 12px;
+    }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .badges { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .badge-orange { background-color: #ea580c; color: white; font-size: 11px; font-weight: bold; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; }
+    .badge-blue { background-color: #1e3a8a; color: white; font-size: 11px; font-weight: bold; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; }
+    .badge-driver { background-color: #0d9488; color: white; font-size: 11px; font-weight: bold; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; }
+    .badge-operator { background-color: #b45309; color: white; font-size: 11px; font-weight: bold; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; }
+    .badge-green {
+      background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;
+      font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 10px;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .badge-green::before { content: "●"; color: #198754; font-size: 8px; }
+    .time-stamp { font-size: 11px; color: #495057; background-color: #e9ecef; padding: 2px 6px; border-radius: 4px; }
+    .card-body { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: #333; margin-bottom: 10px; }
+    .info-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .label { font-weight: bold; color: #212529; }
+    .phone-number { color: #198754; font-weight: bold; }
+    .card-footer { display: flex; gap: 6px; flex-wrap: wrap; }
+    .btn {
+      border: none; border-radius: 4px; padding: 6px 12px; font-size: 12px; font-weight: bold;
+      color: white; cursor: pointer; display: flex; align-items: center; gap: 4px; text-decoration: none;
+    }
+    .btn-blue { background-color: #007bff; }
+    .btn-green { background-color: #25d366; }
+    .btn-orange { background-color: #ffc107; color: #212529; }
+    .btn-red { background-color: #dc3545; color: white; }
+    .btn:hover { opacity: 0.9; }
+    @media (max-width: 768px) {
+      header { height: 22vh; }
+      nav { padding: 6px; gap: 4px; }
+      .nav-btn { padding: 6px 8px; font-size: 11px; }
+      .card-footer { width: 100%; }
+      .btn { flex: 1; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-logo-container">
+      <img src="logo_v3.jpeg?v=100" alt="Yevlax Logistika Loqo" class="header-logo" onerror="this.style.display='none'">
+    </div>
+    <img src="banner.jpg" alt="YEVLAX ONLAYN LOGİSTİKA VƏ KADR MƏRKƏZİ" class="banner-img">
+    <div id="admin-status-btn" class="admin-status" onclick="toggleAdmin()">🔒 Admin Girişi</div>
+  </header>
+
+  <nav>
+    <div class="nav-row">
+      <button type="button" class="nav-btn nav-esas active" onclick="switchTab('esas', this)">🏠 Əsas</button>
+    </div>
+    <div class="nav-row">
+      <button type="button" class="nav-btn nav-logistics" onclick="switchTab('yuk-yerlesdir', this)">📦 Yük</button>
+      <button type="button" class="nav-btn nav-logistics" onclick="switchTab('masin-yerlesdir', this)">🚛 Maşın</button>
+      <button type="button" class="nav-btn nav-logistics" onclick="switchTab('elanlar-yuk', this)">📋 Yük və Maşın Elanları</button>
+      <button type="button" class="nav-btn nav-logistics" onclick="switchTab('uygunluqlar-yuk', this)">🤝 Yük və Maşın Uyğunluğu</button>
+    </div>
+    <div class="nav-row">
+      <button type="button" class="nav-btn nav-hr" onclick="switchTab('driver-yerlesdir', this)">👨‍✈️ Sürücü</button>
+      <button type="button" class="nav-btn nav-hr" onclick="switchTab('operator-yerlesdir', this)">⚙️ Operator</button>
+      <button type="button" class="nav-btn nav-hr" onclick="switchTab('elanlar-vakansiya', this)">👷 İşçi Vakansiyaları</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="esas" class="tab-content active">
+      <h2 class="main-title">YEVLAX ONLAYN LOGİSTİKA VƏ KADR MƏRKƏZİ</h2>
+      <div class="sub-title">100% PULSUZ VƏ KOMİSSİYASIZ XİDMƏT! (0 AZN KOMİSSİYA)</div>
+
+      <div class="action-stack">
+        <a href="https://wa.me/994557884406" target="_blank" class="btn-action btn-whatsapp-bg">💬 BİR KLİKLƏ WHATSAPP-LA ƏLAQƏ</a>
+        <a href="https://t.me/yevlax_logistika_bot" target="_blank" class="btn-action btn-telegram-bg">✈️ TELEGRAM İLƏ ƏLAQƏ</a>
+        <a href="https://drive.google.com/uc?export=download&id=1WdIN2XRhR2jBuNBEQOAcV7lqYC7L0Wdd" download="Yevlax_Logistika.apk" id="apkDownloadBtn" class="btn-action btn-apk-bg" onclick="handleApkDownload(event)">📱 MOBİL TƏTBİQİ YÜKLƏ (APK)</a>
+        
+        <div class="banner-card">
+          <h4 style="margin:0 0 4px 0; font-size:14px;">YÜK, TEXNİKA VƏ KADR MƏRKƏZİ BİR ARADA!</h4>
+          <p style="margin:0; color:#f59e0b; font-weight:bold; font-size:12px;">SİZİN İŞİNİZ, BİZİM MƏSULİYYƏTİMİZ!</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="yuk-yerlesdir" class="tab-content">
+      <h2 style="text-align:center; font-size:18px; margin-bottom:12px;">📦 Yük Elanı Yerləşdir</h2>
+      <form id="form-yuk">
+        <div class="form-group"><label>Ad və Soyad:</label><input type="text" name="person" required></div>
+        <div class="form-group"><label>Haradan:</label><input type="text" name="from" required></div>
+        <div class="form-group"><label>Haraya:</label><input type="text" name="to" required></div>
+        <div class="form-group"><label>Yükün Növü / Təsviri:</label><input type="text" name="title" required></div>
+        <div class="form-row">
+          <div class="form-group"><label>Çəki (Ton):</label><input type="text" name="weight" id="yuk-weight" placeholder="Məs: 10"></div>
+          <div class="form-group"><label>Həcm (Kub m³):</label><input type="text" name="volume" id="yuk-volume" placeholder="Məs: 20"></div>
+        </div>
+        <div class="form-group"><label>Tarix:</label><input type="date" name="date" required></div>
+        <div class="form-group"><label>Əlaqə Nömrəsi:</label><input type="text" name="phone" required></div>
+        <div class="form-group"><label>Əlavə Qeyd / Tipi:</label><input type="text" name="note"></div>
+        <div class="form-group"><label style="color:#d97706;">4 Rəqəmli PIN Kodunuz:</label><input type="password" name="pin" maxlength="4" required></div>
+        <button type="submit" class="submit-btn btn-green-form">📦 Yükü Elan Et</button>
+      </form>
+    </div>
+
+    <div id="masin-yerlesdir" class="tab-content">
+      <h2 style="text-align:center; font-size:18px; margin-bottom:12px;">🚛 Maşın Elanı Yerləşdir</h2>
+      <form id="form-masin">
+        <div class="form-group"><label>Ad və Soyad:</label><input type="text" name="person" required></div>
+        <div class="form-group"><label>Haradan:</label><input type="text" name="from" required></div>
+        <div class="form-group"><label>Haraya:</label><input type="text" name="to" required></div>
+        <div class="form-group"><label>Növü / Modeli / Markası:</label><input type="text" name="title" required></div>
+        <div class="form-row">
+          <div class="form-group"><label>Çəki (Ton):</label><input type="text" name="weight" id="masin-weight" placeholder="Məs: 10"></div>
+          <div class="form-group"><label>Həcm (Kub m³):</label><input type="text" name="volume" id="masin-volume" placeholder="Məs: 20"></div>
+        </div>
+        <div class="form-group"><label>Tarix:</label><input type="date" name="date" required></div>
+        <div class="form-group"><label>Əlaqə Nömrəsi:</label><input type="text" name="phone" required></div>
+        <div class="form-group"><label>Əlavə Qeyd / Tipi:</label><input type="text" name="note"></div>
+        <div class="form-group"><label style="color:#d97706;">4 Rəqəmli PIN Kodunuz:</label><input type="password" name="pin" maxlength="4" required></div>
+        <button type="submit" class="submit-btn btn-orange-form">🚛 Maşını Elan Et</button>
+      </form>
+    </div>
+
+    <div id="driver-yerlesdir" class="tab-content">
+      <h2 style="text-align:center; font-size:18px; margin-bottom:12px;">👨‍✈️ Sürücü Vakansiyası / İş Axtarış Elanı</h2>
+      <form id="form-driver">
+        <div class="form-group"><label>Ad və Soyad:</label><input type="text" name="person" required></div>
+        <div class="form-group"><label>Sürücülük Kateqoriyaları / Təcrübə:</label><input type="text" name="title" placeholder="Məs: C, E kateqoriya, Tatra və ya Shacman təcrübəsi" required></div>
+        <div class="form-row">
+          <div class="form-group"><label>Rayon / Ünvan:</label><input type="text" name="from" value="Yevlax" required></div>
+          <div class="form-group"><label>İstiqamət / İş Yeri:</label><input type="text" name="to" value="Bölgələr / Kəlbəcər / Füzuli" required></div>
+        </div>
+        <div class="form-group"><label>Təcrübə və Qeydlər:</label><input type="text" name="note" placeholder="Məs: Ağır yük maşınlarında 10 il staj"></div>
+        <div class="form-group"><label>Əlaqə Nömrəsi:</label><input type="text" name="phone" required></div>
+        <div class="form-group"><label>Tarix:</label><input type="date" name="date" required></div>
+        <div class="form-group"><label style="color:#d97706;">4 Rəqəmli PIN Kodunuz:</label><input type="password" name="pin" maxlength="4" required></div>
+        <button type="submit" class="submit-btn btn-driver-form">👨‍✈️ Sürücü Elanını Yerləşdir</button>
+      </form>
+    </div>
+
+    <div id="operator-yerlesdir" class="tab-content">
+      <h2 style="text-align:center; font-size:18px; margin-bottom:12px;">⚙️ Operator Vakansiyası / İş Axtarış Elanı</h2>
+      <form id="form-operator">
+        <div class="form-group"><label>Ad və Soyad:</label><input type="text" name="person" required></div>
+        <div class="form-group"><label>Texnika / Vəzifə Növü:</label><input type="text" name="title" placeholder="Məs: Ekskavator, Kran, Manikulyator operatoru" required></div>
+        <div class="form-row">
+          <div class="form-group"><label>Rayon / Ünvan:</label><input type="text" name="from" value="Yevlax" required></div>
+          <div class="form-group"><label>İstiqamət / İş Yeri:</label><input type="text" name="to" value="Bölgələr / Kəlbəcər" required></div>
+        </div>
+        <div class="form-group"><label>İş Təcrübəsi və Qeyd:</label><input type="text" name="note" placeholder="Məs: 8 tonluq strelka və kran təcrübəsi"></div>
+        <div class="form-group"><label>Əlaqə Nömrəsi:</label><input type="text" name="phone" required></div>
+        <div class="form-group"><label>Tarix:</label><input type="date" name="date" required></div>
+        <div class="form-group"><label style="color:#d97706;">4 Rəqəmli PIN Kodunuz:</label><input type="password" name="pin" maxlength="4" required></div>
+        <button type="submit" class="submit-btn btn-operator-form">⚙️ Operator Elanını Yerləşdir</button>
+      </form>
+    </div>
+
+    <div id="elanlar-yuk" class="tab-content">
+      <h2 style="font-size:18px; font-weight:800; margin-top:0; margin-bottom:15px; text-align:center;">📋 Aktiv Yük və Maşın Elanları</h2>
+      <div id="elanlar-yuk-container"></div>
+    </div>
+
+    <div id="elanlar-vakansiya" class="tab-content">
+      <h2 style="font-size:18px; font-weight:800; margin-top:0; margin-bottom:15px; text-align:center; color:#0d9488;">👷 Aktiv Sürücü və Operator Vakansiyaları</h2>
+      <div id="elanlar-vakansiya-container"></div>
+    </div>
+
+    <div id="uygunluqlar-yuk" class="tab-content">
+      <h2 style="text-align:center; font-size:18px; margin-bottom:12px; color:#1e3a8a;">🤝 Yük və Maşın Uyğunluğu</h2>
+      <div id="uygunluqlar-yuk-container"></div>
+    </div>
+  </div>
+
+  <script>
+    const WORKER_URL = "https://yevlax-logistika-qaraji-az.workers.dev/elanlar";
+    let isAdmin = false;
+    const ADMIN_PASSWORD = "161282";
+    const ADMIN_PHONE = "994557884406"; 
+
+    let sampleData = [];
+
+    async function loadAllData() {
+      try {
+        const res = await fetch(WORKER_URL + "?t=" + Date.now(), { mode: 'cors', cache: 'no-store' });
+        if(res.ok) {
+          const remoteData = await res.json();
+          if(Array.isArray(remoteData)) {
+            sampleData = remoteData;
+            localStorage.setItem('yevlax_elanlar_cache', JSON.stringify(sampleData));
+            renderAllViews();
+            return;
+          }
+        }
+      } catch(e) {
+        console.log("Mərkəzi baza xətası.");
+      }
+
+      const cached = localStorage.getItem('yevlax_elanlar_cache');
+      if(cached) {
+        try { sampleData = JSON.parse(cached); } catch(err) { sampleData = []; }
+      }
+      renderAllViews();
+    }
+
+    async function syncToCloudflare(actionType, dataPayload) {
+      if(actionType === 'add') {
+        sampleData.unshift(dataPayload);
+      } else if(actionType === 'delete') {
+        sampleData = sampleData.filter(x => x.id !== dataPayload.id);
+      }
+      
+      localStorage.setItem('yevlax_elanlar_cache', JSON.stringify(sampleData));
+      renderAllViews();
+
+      try {
+        await fetch(WORKER_URL, {
+          method: 'POST',
+          mode: 'cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: actionType, data: dataPayload, id: dataPayload?.id })
+        });
+      } catch(e) {
+        console.log("Mərkəzi bazaya yazılmadı.");
+      }
+    }
+
+    function handleApkDownload(e) {
+      e.preventDefault();
+      const fallbackDriveUrl = "https://drive.google.com/uc?export=download&id=1WdIN2XRhR2jBuNBEQOAcV7lqYC7L0Wdd";
+      fetch('yevlax-logistika.apk', { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) { window.location.href = 'yevlax-logistika.apk'; }
+          else { window.location.href = fallbackDriveUrl; }
+        })
+        .catch(() => { window.location.href = fallbackDriveUrl; });
+    }
+
+    function formatDateToAZ(dateStr) {
+      if (!dateStr) return '';
+      if (dateStr.includes('.')) return dateStr;
+      const parts = dateStr.split('-');
+      return parts.length === 3 ? `${parts[2]}.${parts[1]}.${parts[0]}` : dateStr;
+    }
+
+    function switchTab(tabId, btnElement) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+      
+      const targetTab = document.getElementById(tabId);
+      if(targetTab) targetTab.classList.add('active');
+
+      if (!btnElement) {
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const tabMap = { 
+          'esas': 0, 
+          'yuk-yerlesdir': 1, 
+          'masin-yerlesdir': 2, 
+          'elanlar-yuk': 3,
+          'uygunluqlar-yuk': 4,
+          'driver-yerlesdir': 5, 
+          'operator-yerlesdir': 6, 
+          'elanlar-vakansiya': 7
+        };
+        if(tabMap[tabId] !== undefined) btnElement = navBtns[tabMap[tabId]];
+      }
+      if (btnElement) btnElement.classList.add('active');
+      
+      loadAllData();
+    }
+
+    function renderAllViews() {
+      renderElanlarSection('elanlar-yuk-container', ['YÜK ELANI', 'MAŞIN ELANI']);
+      renderElanlarSection('elanlar-vakansiya-container', ['SÜRÜCÜ VAKANSİYASI', 'OPERATOR VAKANSİYASI']);
+      renderYukUygunluqlar();
+    }
+
+    function renderElanlarSection(containerId, allowedTypes) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+
+      const filtered = sampleData.filter(x => allowedTypes.includes(x.type));
+      if(filtered.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#64748b; padding:15px;">Hələ ki bu bölmə üzrə aktiv elan yoxdur.</p>';
+        return;
+      }
+
+      filtered.forEach(item => {
+        const phoneDisplay = isAdmin ? (item.realPhone || item.phone) : item.phone;
+        const waText = encodeURIComponent(`Salam, "${item.title}" (${item.from} -> ${item.to}) elanı ilə bağlı müraciət etmək istəyirəm.`);
+        const waLink = `https://wa.me/${ADMIN_PHONE}?text=${waText}`;
+        const telLink = `tel:${ADMIN_PHONE}`;
+
+        const deleteBtn = isAdmin ? `<button type="button" class="btn btn-red" onclick="deleteElan(${item.id})">🗑️ Sil</button>` : '';
+        
+        let badgeClass = 'badge-blue';
+        if(item.type === 'MAŞIN ELANI') badgeClass = 'badge-orange';
+        if(item.type === 'SÜRÜCÜ VAKANSİYASI') badgeClass = 'badge-driver';
+        if(item.type === 'OPERATOR VAKANSİYASI') badgeClass = 'badge-operator';
+
+        let weightVolumeText = '';
+        if(item.weight && item.volume) {
+          weightVolumeText = `⚖️ <span class="label">Çəki / Tutum:</span> ${item.weight} | 📦 ${item.volume}`;
+        } else if(item.weight) {
+          weightVolumeText = `⚖️ <span class="label">Çəki / Tutum:</span> ${item.weight}`;
+        } else if(item.volume) {
+          weightVolumeText = `📦 <span class="label">Həcm / Tutum:</span> ${item.volume}`;
+        }
+
+        const formattedDate = formatDateToAZ(item.date);
+
+        container.innerHTML += `
+          <div class="card">
+            <div class="card-header">
+              <div class="badges">
+                <span class="${badgeClass}">📌 ${item.type}</span>
+                <span class="badge-green">${item.status || 'BAZADADIR'}</span>
+              </div>
+              ${item.time ? `<span class="time-stamp">🕒 ${item.time}</span>` : ''}
+            </div>
+            <div class="card-body">
+              <div class="info-row">📋 <span class="label">Detay / Peşə / Yük:</span> ${item.title}</div>
+              <div class="info-row">📍 <span class="label">Marşrut / Ünvan:</span> ${item.from} ➔ ${item.to}</div>
+              ${weightVolumeText ? `<div class="info-row">${weightVolumeText}</div>` : ''}
+              <div class="info-row">📅 <span class="label">Tarix:</span> ${formattedDate}</div>
+              <div class="info-row">👤 <span class="label">Əlaqədar şəxs:</span> ${item.person} | 📞 <span class="phone-number">${phoneDisplay}</span></div>
+              ${item.note ? `<div class="info-row">📝 <span class="label">Qeyd:</span> ${item.note}</div>` : ''}
+            </div>
+            <div class="card-footer">
+              <a href="${telLink}" class="btn btn-blue">📞 Zəng Et</a>
+              <a href="${waLink}" target="_blank" class="btn btn-green">💬 WhatsApp</a>
+              ${deleteBtn}
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function renderYukUygunluqlar() {
+      const container = document.getElementById('uygunluqlar-yuk-container');
+      if (!container) return;
+
+      const yukler = sampleData.filter(x => x.type === 'YÜK ELANI');
+      const masinlar = sampleData.filter(x => x.type === 'MAŞIN ELANI');
+      let matches = [];
+
+      yukler.forEach(y => {
+        masinlar.forEach(m => {
+          const yFrom = y.from.trim().toLowerCase();
+          const yTo = y.to.trim().toLowerCase();
+          const mFrom = m.from.trim().toLowerCase();
+          const mTo = m.to.trim().toLowerCase();
+
+          const isFromMatch = yFrom === mFrom || yFrom.includes(mFrom) || mFrom.includes(yFrom);
+          const isUniversalRoute = mTo.includes('bütün') || mTo.includes('ölkə') || mTo.includes('hər yer');
+          const isToMatch = yTo === mTo || yTo.includes(mTo) || mTo.includes(yTo) || isUniversalRoute;
+
+          if (isFromMatch && isToMatch) {
+            matches.push({ yuk: y, masin: m });
+          }
+        });
+      });
+
+      if (matches.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#64748b; padding:15px;">Hələ ki marşrutu üst-üstə düşən yük və maşın uyğunluğu tapılmadı.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+      matches.forEach(match => {
+        const yukPhone = isAdmin ? (match.yuk.realPhone || match.yuk.phone) : match.yuk.phone;
+        const masinPhone = isAdmin ? (match.masin.realPhone || match.masin.phone) : match.masin.phone;
+
+        container.innerHTML += `
+          <div class="card" style="border-left: 5px solid #1e3a8a;">
+            <h4 style="margin:0 0 8px 0; color:#1e3a8a; font-size:14px;">🤝 YÜK VƏ MAŞIN UYĞUNLUĞU</h4>
+            <div class="info-row">📍 <span class="label">Yük Marşrutu:</span> ${match.yuk.from} ➔ ${match.yuk.to}</div>
+            <div class="info-row">🚛 <span class="label">Maşın Marşrutu:</span> ${match.masin.from} ➔ ${match.masin.to}</div>
+            <hr style="border:0; border-top:1px dashed #cbd5e1; margin:8px 0;">
+            <div class="info-row">📦 <span class="label">Yük:</span> ${match.yuk.title} (${match.yuk.person}) - 📞 <span class="phone-number">${yukPhone}</span></div>
+            <div class="info-row">🚛 <span class="label">Maşın:</span> ${match.masin.title} (${match.masin.person}) - 📞 <span class="phone-number">${masinPhone}</span></div>
+          </div>
+        `;
+      });
+    }
+
+    function setupAutoCalculation(weightElemId, volumeElemId) {
+      const wInput = document.getElementById(weightElemId);
+      const vInput = document.getElementById(volumeElemId);
+      if (!wInput || !vInput) return;
+      const COEFF = 2;
+      wInput.addEventListener('input', function() {
+        const rawVal = this.value.replace(/[^0-9.]/g, '');
+        const val = parseFloat(rawVal);
+        if (!isNaN(val) && val > 0) {
+          vInput.value = (val * COEFF).toFixed(2).replace(/\.00$/, '') + " m³";
+        } else if (this.value.trim() === '') {
+          vInput.value = '';
+        }
+      });
+      vInput.addEventListener('input', function() {
+        const rawVal = this.value.replace(/[^0-9.]/g, '');
+        const val = parseFloat(rawVal);
+        if (!isNaN(val) && val > 0) {
+          wInput.value = (val / COEFF).toFixed(2).replace(/\.00$/, '') + " Ton";
+        } else if (this.value.trim() === '') {
+          wInput.value = '';
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      setupAutoCalculation('yuk-weight', 'yuk-volume');
+      setupAutoCalculation('masin-weight', 'masin-volume');
+
+      document.getElementById('form-yuk').addEventListener('submit', function(e) {
+        e.preventDefault();
+        saveNewElan(this, 'YÜK ELANI', 'elanlar-yuk');
+      });
+      document.getElementById('form-masin').addEventListener('submit', function(e) {
+        e.preventDefault();
+        saveNewElan(this, 'MAŞIN ELANI', 'elanlar-yuk');
+      });
+      document.getElementById('form-driver').addEventListener('submit', function(e) {
+        e.preventDefault();
+        saveNewElan(this, 'SÜRÜCÜ VAKANSİYASI', 'elanlar-vakansiya');
+      });
+      document.getElementById('form-operator').addEventListener('submit', function(e) {
+        e.preventDefault();
+        saveNewElan(this, 'OPERATOR VAKANSİYASI', 'elanlar-vakansiya');
+      });
+
+      loadAllData();
+      setInterval(loadAllData, 3000);
+    });
+
+    async function saveNewElan(form, type, targetTab) {
+      const formData = new FormData(form);
+      const now = new Date();
+      const dd = String(now.getDate()).padStart(2, '0');
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const timeStr = `${dd}.${mm}.${now.getFullYear()} ${now.toTimeString().slice(0, 5)}`;
+
+      let weightVal = formData.get('weight') || '';
+      if(weightVal && !weightVal.includes('Ton') && !isNaN(parseFloat(weightVal))) weightVal += " Ton";
+
+      let volumeVal = formData.get('volume') || '';
+      if(volumeVal && !volumeVal.includes('m³') && !isNaN(parseFloat(volumeVal))) volumeVal += " m³";
+
+      const rawPhone = formData.get('phone');
+      const maskedPhone = rawPhone.length > 6 ? rawPhone.slice(0, 6) + "******" : rawPhone;
+
+      const newElan = {
+        id: Date.now(),
+        type: type,
+        status: 'BAZADADIR',
+        time: timeStr,
+        title: formData.get('title'),
+        from: formData.get('from'),
+        to: formData.get('to'),
+        weight: weightVal,
+        volume: volumeVal,
+        note: formData.get('note') || '',
+        person: formData.get('person'),
+        date: formData.get('date'),
+        phone: maskedPhone,
+        realPhone: rawPhone,
+        pin: formData.get('pin')
+      };
+
+      await syncToCloudflare('add', newElan);
+      form.reset();
+      alert(type + " Uğurla Əlavə Olundu və Mərkəzi Bazaya Yazıldı!");
+      switchTab(targetTab);
+    }
+
+    async function deleteElan(id) {
+      if(confirm("Bu elanı silməyə əminsiniz?")) {
+        await syncToCloudflare('delete', { id: id });
+      }
+    }
+
+    function toggleAdmin() {
+      if(!isAdmin) {
+        let pass = prompt("Admin Şifrəsini daxil edin:");
+        if(pass === ADMIN_PASSWORD) {
+          isAdmin = true;
+          document.getElementById('admin-status-btn').innerText = "✅ Admin Aktivdir";
+          document.getElementById('admin-status-btn').style.background = "#22c55e";
+          alert("Admin girişi uğurludur!");
+        } else {
+          alert("Yanlış şifrə!");
+        }
+      } else {
+        isAdmin = false;
+        document.getElementById('admin-status-btn').innerText = "🔒 Admin Girişi";
+        document.getElementById('admin-status-btn').style.background = "#ff5722";
+      }
+      renderAllViews();
+    }
+  </script>
+</body>
+</html>
