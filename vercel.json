@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "yevlax-regionalni-onlayn-elaqelendi-eta-three.vercel.app"
+        }
+      ],
+      "destination": "https://yevlax-regionalni-onlayn-elaqelendi-lilac.vercel.app/$1",
+      "permanent": true
+    }
+  ]
+}
